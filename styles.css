@@ -603,6 +603,17 @@ body::after{
   .concept-ribbon{font-size:.58rem;letter-spacing:.08em}
 }
 
+/* Narrow screens: two-column rows squeeze the left label into a column of single
+   words. Every row of this shape stacks instead — ledger, engagements, enquiry meta. */
+@media (max-width:560px){
+  .ledger li{flex-direction:column;align-items:flex-start;gap:6px}
+  .ledger b{align-self:flex-start}
+  .engagements li{grid-template-columns:44px 1fr}
+  .engagements em{grid-column:2;margin-top:5px}
+  .enq__meta div{flex-direction:column;align-items:flex-start;gap:4px}
+  .enq__meta dd{text-align:left}
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
     transition-duration:.01ms!important}
